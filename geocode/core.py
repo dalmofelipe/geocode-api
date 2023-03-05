@@ -23,7 +23,7 @@ def search(term:str) -> List[SerialLocation] | None:
     Em pesquisas por endereços, deve-se informar o tipo do logradouro como 
     rua ou avenida.
 
-    Retorna uma lista de localização com base no nome informado
+    Retorna uma lista de localização com base no termo informado
     """
     try:
         result : List[GeopyLocation] = geolocator.geocode(
@@ -37,4 +37,4 @@ def search(term:str) -> List[SerialLocation] | None:
 
         return list_address
     except Exception as e:
-        print(f"Error geocode.core.main:search: \n{e}")
+        print(f"Error geocode.core:search: \n{e}")
