@@ -15,7 +15,7 @@ pyclean = "^2.6.0"
 pytest = "^7.2.1"
 
 [tool.poetry.scripts]
-geocode = 'geocode.cli.main:console_run'
+geocode = 'geocode.cli:console_run'
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
