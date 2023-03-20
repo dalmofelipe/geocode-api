@@ -11,7 +11,8 @@ Serviço de pesquisa de endereço, coordenadas, companhias e pontos de referênc
     > poetry install
     > geocode
 
-Servidor iniciará na porta 8000.
+Servidor iniciará na porta 8000. Acesse `http://localhost:8000/docs` para consulta documentação.
+
 
 ## Rota `/search`
 
@@ -27,7 +28,7 @@ Servidor iniciará na porta 8000.
 
 Em caso de pesquisa de endereço, deve-se informar o tipo do logradouro, como Av, Avenida ou Rua. Também é indicado informar o numero do endereço, no inicio da string. Exemplo `3000 Av dos Andradas`.
 
-### **Retorno**
+### **RETORNO**
 
 Retona uma lista de localidades encontradas ou não.
 
