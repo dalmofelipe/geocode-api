@@ -39,3 +39,8 @@ Retona uma lista de localidades encontradas ou não.
             logitude: float,
         }
     ]
+
+
+### ToDo
+
+- Adicionar query param `limit` para modificar quantidade de registros que serão retornados
