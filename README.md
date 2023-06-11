@@ -1,9 +1,13 @@
 
-# GeoCode Microservice
+# GeoCode
 
-Serviço de pesquisa de endereço, coordenadas, companhias e pontos de referência.
+API para busca de endereço, companhias e pontos de referência. 
 
-## Iniciando
+Retorna diversas informações sobre o endereço informado, além de sua coordenada geografica.
+
+<br>
+
+### Iniciando
 
     > git clone [repo]
     > cd geocode 
@@ -13,8 +17,9 @@ Serviço de pesquisa de endereço, coordenadas, companhias e pontos de referênc
 
 Servidor iniciará na porta 8000. Acesse `http://localhost:8000/docs` para consulta documentação.
 
+<br>
 
-## Rota `/search`
+### Rota `/search`
 
     GET http://localhost:8000/search?term=Av dos Andradas 3000 HTTP/1.1
     GET http://localhost:8000/search?term=3000 Av dos Andradas HTTP/1.1
@@ -22,15 +27,15 @@ Servidor iniciará na porta 8000. Acesse `http://localhost:8000/docs` para consu
     GET http://localhost:8000/search?term=Google Belo Horizonte HTTP/1.1
 
 
-### **QUERY PARAMS**
+**QUERY PARAMS**
 
 `term` : termo de busca, pode ser endereço, ponto de refência ou nome de empresas. 
 
 Em caso de pesquisa de endereço, deve-se informar o tipo do logradouro, como Av, Avenida ou Rua. Também é indicado informar o numero do endereço, no inicio da string. Exemplo `3000 Av dos Andradas`.
 
-### **RETORNO**
+**RETORNO**
 
-Retona uma lista de localidades encontradas ou não.
+Retona uma lista de localidades encontradas.
 
     [
         {
@@ -40,7 +45,4 @@ Retona uma lista de localidades encontradas ou não.
         }
     ]
 
-
-### ToDo
-
-- Adicionar query param `limit` para modificar quantidade de registros que serão retornados
+<br>
