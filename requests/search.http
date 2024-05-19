@@ -1,6 +1,7 @@
 @hostname = localhost
 @port = 8000
-@host = {{hostname}}:{{port}}
+@api_version=v1
+@host = {{hostname}}:{{port}}/api/{{api_version}}
 
 
 ### Empresas
@@ -11,9 +12,3 @@ GET http://{{host}}/search?term=Lagoa da Pampulha HTTP/1.1
 
 ### Em buscas de endereços, se deve especificar o tipo como Av ou Rua
 GET http://{{host}}/search?term=Av dos Andradas 3000 Belo Horizonte HTTP/1.1
-
-### Caso contrário não funciona
-GET http://{{host}}/search?term=dos Andradas, 3000 Belo Horizonte HTTP/1.1
-
-###
-GET http://{{host}}/search?term=Rua São Sebastião do Maranhão HTTP/1.1

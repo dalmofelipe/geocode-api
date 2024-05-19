@@ -1,22 +1,31 @@
+import os
+
 from typing import List
 
 from geopy.geocoders import Nominatim
 from geopy.location import Location as GeopyLocation
 
-from .serializers import Location as SerialLocation
+from .api.v1.serializers.location import Location
 
 geolocator = Nominatim(user_agent="GeoCode")
 
 
+def get_docfile(file_path:str):
+    root_dir = os.getcwd()
+
+    with open(root_dir + file_path, 'r', encoding='utf-8') as file:
+        return ''.join(file.read())
+
+
 def to_serial_location(location: GeopyLocation):
-    return SerialLocation(
+    return Location(
         address=location.address, 
         latitude=location.latitude,
         longitude=location.longitude
     )
 
 
-def search(term:str) -> List[SerialLocation] | None:
+def search(term:str) -> List[Location] | None:
     """
     Busca por endereços, empresas e pontos de referência
 
@@ -32,7 +41,7 @@ def search(term:str) -> List[SerialLocation] | None:
 
         if not result: return None
 
-        list_address : List[SerialLocation] = \
+        list_address : List[Location] = \
             list(map(lambda l: to_serial_location(l), result))
 
         return list_address
